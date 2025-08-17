@@ -23,11 +23,11 @@
     "@angular/router": "^20.0.0",
     "@capacitor/app": "7.0.2",
     "@capacitor/core": "7.4.2",
+    "@capacitor/filesystem": "^7.1.4",
     "@capacitor/haptics": "7.0.2",
     "@capacitor/keyboard": "7.0.2",
-    "@capacitor/status-bar": "7.0.2",
-    "@capacitor/filesystem": "^7.1.4",
     "@capacitor/preferences": "^7.0.2",
+    "@capacitor/status-bar": "7.0.2",
     "@ionic/angular": "^8.7.2",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
@@ -60,6 +60,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.6.2",
     "typescript": "~5.8.0"
   },
   "description": "An Ionic project"

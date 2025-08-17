@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,24 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Músculos</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div style="text-align:center; margin-top: 24px;">
+    <h2>Bienvenido a Training Wizard 🧙‍♂️</h2>
+    <p>Selecciona un grupo muscular para comenzar tu entrenamiento:</p>
+  </div>
+
+
+
+  <ion-grid class="grid">
+    <ion-row class="tiles-row">
+      @for (item of items; track $index) {
+      <ion-item class="tile-card" (click)="selectGroup($index)" [class.selected]="selectedIndex === $index">
+        {{ item }}
+      </ion-item>
+      }
+    </ion-row>
+  </ion-grid>
 </ion-content>
