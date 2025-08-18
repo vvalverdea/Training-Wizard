@@ -1,27 +1,36 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonItem } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { StorageService } from '../context/storage';
+import { MUSCLE_PARTS, muscles } from '../constants/muscles';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent]
+  imports: [IonHeader, IonGrid, IonRow, IonItem, IonContent, IonToolbar, IonTitle, IonContent, ExploreContainerComponent]
 })
 export class Tab2Page {
 
 
   muscleChosen: string = 'Muscle Group';
-  private readonly muscles: string[] = ['Biceps', 'Chest', 'Back', 'Shoulders', 'Legs', 'Core', 'Forearms'];
+  parts: string[] = [];
 
-  constructor(private storage: StorageService) { }
+  constructor(private storage: StorageService, private router: Router) { }
 
-  ionViewWillEnter() {
-    this.getMuscle();
+  async ionViewWillEnter() {
+    await this.getMuscle();
+    this.parts = MUSCLE_PARTS[this.muscleChosen];
   }
 
-  getMuscle() {
-    this.muscleChosen = this.muscles[this.storage.get()];
+  async getMuscle() {
+    this.muscleChosen = muscles[this.storage.get()];
+  }
+
+  selectPart(part: string) {
+    console.log(`Seleccionado: ${this.muscleChosen} → ${part}`);
+    this.storage.setMuscleInfo(part)
+    this.router.navigate(['/tabs/tab3']);
   }
 }

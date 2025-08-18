@@ -5,13 +5,22 @@ import { Injectable } from '@angular/core';
 })
 export class StorageService {
   private muscle = -1;
+  private muscleInfo = '';
 
   set(key: number) {
     this.muscle = key;
   }
 
+  setMuscleInfo(muscleInfo: string) {
+    this.muscleInfo = muscleInfo;
+  }
+
   get(): number {
     return this.muscle;
+  }
+
+  getMuscleInfo(): string {
+    return this.muscleInfo;
   }
 
   clear() {

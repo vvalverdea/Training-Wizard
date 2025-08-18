@@ -13,5 +13,13 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-grid class="muscle-grid">
+    <ion-row>
+      @for (part of parts; track $index) {
+      <ion-item class="tile-card" class="muscle-part" (click)="selectPart(part)">
+        {{ part }}
+      </ion-item>
+      }
+    </ion-row>
+  </ion-grid>
 </ion-content>
