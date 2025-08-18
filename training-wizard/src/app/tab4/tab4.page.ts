@@ -25,8 +25,8 @@ export class Tab4Page {
   ionViewWillEnter() {
     this.exerciseName = this.storage.getExerciseSelectedByName();
     this.exerciseId = this.storage.getExerciseSelectedById();
-    this.exerciseImage = EXERCISES_DATA[this.exerciseId]['image']
-    console.log('id', this.exerciseId, 'image', this.exerciseImage)
+    this.exerciseImage = EXERCISES_DATA[this.exerciseId]['image'];
+    this.exerciseDescription = EXERCISES_DATA[this.exerciseId]['description'];
   }
 
   increaseSeries() {
