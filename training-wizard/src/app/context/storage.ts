@@ -8,6 +8,7 @@ export class StorageService {
   private muscleInfo = '';
 
   set(key: number) {
+    console.log(key)
     this.muscle = key;
   }
 
@@ -25,5 +26,6 @@ export class StorageService {
 
   clear() {
     this.muscle = -1;
+    this.muscleInfo = '';
   }
 }

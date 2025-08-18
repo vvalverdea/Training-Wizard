@@ -13,8 +13,12 @@ import { Router } from '@angular/router';
 export class Tab1Page {
   constructor(private storage: StorageService, private router: Router) { }
 
-  items = ['Biceps', 'Chest', 'Back', 'Shoulders', 'Legs', 'Core', 'Forearms']
+  items = ['Biceps', 'Triceps', 'Chest', 'Back', 'Shoulders', 'Legs', 'Core', 'Forearms']
   selectedIndex: number | null = null;
+
+  ionViewWillEnter() {
+    this.storage.clear();
+  }
 
   selectGroup(item: number) {
     this.selectedIndex = item;

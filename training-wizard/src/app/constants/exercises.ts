@@ -13,6 +13,23 @@ export const exercises: { [muscle: string]: { [part: string]: string[] } } = {
             "Curl en banco inclinado",
         ],
     },
+    Triceps: {
+        "Cabeza Larga": [
+            "Press francés con barra Z",
+            "Extensiones con mancuerna tras la cabeza",
+            "Press cerrado en banco plano"
+        ],
+        "Cabeza Corta": [
+            "Fondos en paralelas",
+            "Press cerrado con barra",
+            "Extensión de tríceps en polea con cuerda"
+        ],
+        "Cabeza Medial": [
+            "Extensiones de tríceps en polea con barra recta",
+            "Press de banca con agarre estrecho",
+            "Patada de tríceps con mancuerna"
+        ]
+    },
     Chest: {
         "Superior": [
             "Press inclinado con barra",
