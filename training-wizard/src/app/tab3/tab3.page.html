@@ -16,8 +16,8 @@
   <ion-grid class="grid">
     <ion-row class="tiles-row">
       @for (exerciseInfo of exerciseTable; track $index) {
-      <ion-item class="tile-card">
-        {{ exerciseInfo ?? null }}
+      <ion-item class="tile-card" (click)="selectExercise(exerciseInfo)">
+        {{ exerciseInfo.title ?? null }}
       </ion-item>
       }
     </ion-row>

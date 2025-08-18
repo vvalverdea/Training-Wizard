@@ -1,119 +1,146 @@
-export const exercises: { [muscle: string]: { [part: string]: string[] } } = {
+export const exercises: { [muscle: string]: { [part: string]: { id: number; title: string }[] } } = {
     Biceps: {
         "Braquial": [
-            "Curl martillo",
-            "Curl inverso",
+            { id: 1, title: "Curl martillo" },
+            { id: 2, title: "Curl inverso" },
         ],
         "Cabeza Corta": [
-            "Curl con barra Z agarre cerrado",
-            "Curl concentrado",
+            { id: 3, title: "Curl con barra Z agarre cerrado" },
+            { id: 4, title: "Curl concentrado" },
         ],
         "Cabeza Larga": [
-            "Curl con barra agarre ancho",
-            "Curl en banco inclinado",
+            { id: 5, title: "Curl con barra agarre ancho" },
+            { id: 6, title: "Curl en banco inclinado" },
         ],
     },
     Triceps: {
         "Cabeza Larga": [
-            "Press francés con barra Z",
-            "Extensiones con mancuerna tras la cabeza",
-            "Press cerrado en banco plano"
+            { id: 7, title: "Press francés con barra Z" },
+            { id: 8, title: "Extensiones con mancuerna tras la cabeza" },
+            { id: 9, title: "Press cerrado en banco plano" },
         ],
         "Cabeza Corta": [
-            "Fondos en paralelas",
-            "Press cerrado con barra",
-            "Extensión de tríceps en polea con cuerda"
+            { id: 10, title: "Fondos en paralelas" },
+            { id: 11, title: "Press cerrado con barra" },
+            { id: 12, title: "Extensión de tríceps en polea con cuerda" },
         ],
         "Cabeza Medial": [
-            "Extensiones de tríceps en polea con barra recta",
-            "Press de banca con agarre estrecho",
-            "Patada de tríceps con mancuerna"
+            { id: 13, title: "Extensiones de tríceps en polea con barra recta" },
+            { id: 14, title: "Press de banca con agarre estrecho" },
+            { id: 15, title: "Patada de tríceps con mancuerna" },
         ]
     },
     Chest: {
         "Superior": [
-            "Press inclinado con barra",
-            "Press inclinado con mancuernas",
-            "Aperturas inclinadas",
+            { id: 16, title: "Press inclinado con barra" },
+            { id: 17, title: "Press inclinado con mancuernas" },
+            { id: 18, title: "Aperturas inclinadas" },
         ],
         "Medio": [
-            "Press banca plano con barra",
-            "Press banca plano con mancuernas",
-            "Aperturas en banco plano",
+            { id: 19, title: "Press banca plano con barra" },
+            { id: 20, title: "Press banca plano con mancuernas" },
+            { id: 21, title: "Aperturas en banco plano" },
         ],
         "Inferior": [
-            "Press declinado con barra",
-            "Fondos en paralelas",
+            { id: 22, title: "Press declinado con barra" },
+            { id: 23, title: "Fondos en paralelas" },
         ],
     },
     Back: {
         "Dorsal ancho": [
-            "Dominadas agarre ancho",
-            "Jalón al pecho",
+            { id: 24, title: "Dominadas agarre ancho" },
+            { id: 25, title: "Jalón al pecho" },
         ],
         "Trapecio": [
-            "Remo con barra",
-            "Remo con mancuerna",
+            { id: 26, title: "Remo con barra" },
+            { id: 27, title: "Remo con mancuerna" },
         ],
         "Romboides": [
-            "Encogimientos con barra",
-            "Encogimientos con mancuernas",
+            { id: 28, title: "Encogimientos con barra" },
+            { id: 29, title: "Encogimientos con mancuernas" },
         ],
     },
     Shoulders: {
         "Anterior": [
-            "Press militar",
-            "Elevaciones frontales",
+            { id: 30, title: "Press militar" },
+            { id: 31, title: "Elevaciones frontales" },
         ],
         "Lateral": [
-            "Elevaciones laterales",
+            { id: 32, title: "Elevaciones laterales" },
         ],
         "Posterior": [
-            "Pájaros (rear delts)",
-            "Face pulls",
+            { id: 33, title: "Pájaros (rear delts)" },
+            { id: 34, title: "Face pulls" },
         ],
     },
     Legs: {
         "Cuádriceps": [
-            "Sentadillas",
-            "Prensa de pierna",
-            "Zancadas",
+            { id: 35, title: "Sentadillas" },
+            { id: 36, title: "Prensa de pierna" },
+            { id: 37, title: "Zancadas" },
         ],
         "Isquiotibiales": [
-            "Peso muerto rumano",
-            "Curl femoral",
+            { id: 38, title: "Peso muerto rumano" },
+            { id: 39, title: "Curl femoral" },
         ],
         "Glúteos": [
-            "Hip thrust",
-            "Puente de glúteo",
+            { id: 40, title: "Hip thrust" },
+            { id: 41, title: "Puente de glúteo" },
         ],
         "Pantorrillas": [
-            "Elevaciones de talones de pie",
-            "Elevaciones de talones sentado",
+            { id: 42, title: "Elevaciones de talones de pie" },
+            { id: 43, title: "Elevaciones de talones sentado" },
         ],
     },
     Core: {
         "Recto abdominal": [
-            "Crunch abdominal",
-            "Elevación de piernas",
+            { id: 44, title: "Crunch abdominal" },
+            { id: 45, title: "Elevación de piernas" },
         ],
         "Oblicuos": [
-            "Russian twist",
-            "Side plank",
+            { id: 46, title: "Russian twist" },
+            { id: 47, title: "Side plank" },
         ],
         "Transverso": [
-            "Plancha",
-            "Dead bug",
+            { id: 48, title: "Plancha" },
+            { id: 49, title: "Dead bug" },
         ],
     },
     Forearms: {
         "Flexores": [
-            "Curl de muñeca con barra",
-            "Farmer’s walk",
+            { id: 50, title: "Curl de muñeca con barra" },
+            { id: 51, title: "Farmer’s walk" },
         ],
         "Extensores": [
-            "Curl inverso",
-            "Extensión de muñeca",
+            { id: 52, title: "Curl inverso" },
+            { id: 53, title: "Extensión de muñeca" },
         ],
     },
 };
+
+
+
+export const EXERCISES_DATA: { [id: number]: { title: string; image: string; description: string } } = {
+    3: {
+        title: 'Curl con barra Z agarre cerrado',
+        image: 'assets/exercises/curlzbiceps.gif',
+        description: 'Mantén los codos pegados al cuerpo y controla el movimiento tanto al subir como al bajar la barra.'
+    },
+    30: {
+        title: 'Press de Hombros con Mancuernas',
+        image: 'assets/exercises/press-hombros.gif',
+        description: 'Mantén la espalda recta y los hombros hacia abajo mientras empujas las mancuernas hacia arriba.'
+    },
+    10: {
+        title: 'Fondos en Paralelas',
+        image: 'assets/exercises/dips.gif',
+        description: 'Baja lentamente manteniendo los codos cerca del torso y sube controlando el movimiento.'
+    },
+    35: {
+        title: 'Sentadillas con Barra',
+        image: 'assets/exercises/sentadillas.gif',
+        description: 'Mantén la espalda recta y baja hasta que los muslos queden paralelos al suelo.'
+    }
+};
+
+

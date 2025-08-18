@@ -4,6 +4,7 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
 import { StorageService } from '../context/storage';
 import { exercises } from '../constants/exercises';
 import { muscles } from '../constants/muscles';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -15,7 +16,7 @@ export class Tab3Page {
 
   exerciseTable: any[] = [];
 
-  constructor(private storage: StorageService) { }
+  constructor(private storage: StorageService, private router: Router) { }
 
   ionViewWillEnter() {
     this.getExercises();
@@ -26,5 +27,11 @@ export class Tab3Page {
     const musclePart = this.storage.getMuscleInfo();
 
     this.exerciseTable = exercises[muscle][musclePart];
+  }
+
+  selectExercise(exercise: string) {
+    this.storage.setExerciseSelected(exercise);
+    console.log(exercise)
+    this.router.navigate(['/tabs/tab4']);
   }
 }

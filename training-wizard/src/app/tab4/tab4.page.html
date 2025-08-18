@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ejercicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Imagen o GIF -->
+  <div class="image-container">
+    <img [src]="exerciseImage" alt="Ejercicio" />
+  </div>
+
+  <!-- Descripción o consejo -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ exerciseName }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ exerciseDescription }}
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Contador de series -->
+  <div class="series-counter">
+    <ion-button color="danger" (click)="decreaseSeries()">-</ion-button>
+    <span>{{ currentSeries }}/{{ totalSeries }}</span>
+    <ion-button color="success" (click)="increaseSeries()">+</ion-button>
+  </div>
+
+  <!-- Peso elegido -->
+  <ion-item>
+    <ion-label position="floating">Peso usado (kg)</ion-label>
+
+  </ion-item>
+
+</ion-content>
