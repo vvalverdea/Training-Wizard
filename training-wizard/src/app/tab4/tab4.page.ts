@@ -25,6 +25,8 @@ export class Tab4Page {
   timeLeft: number = 0;
   timer: any;
 
+  hasStarted = false;
+
   constructor(private storage: StorageService) { }
 
   ionViewWillEnter() {
@@ -43,14 +45,22 @@ export class Tab4Page {
   }
 
   startTimer() {
+    this.hasStarted = !this.hasStarted;
     this.timeLeft = this.timerMinutes * 60;
     clearInterval(this.timer);
     this.timer = setInterval(() => {
       if (this.timeLeft > 0) {
         this.timeLeft--;
       } else {
+        this.hasStarted = !this.hasStarted;
         clearInterval(this.timer);
+        this.playAlert();
       }
     }, 1000);
+  }
+
+  playAlert() {
+    const audio = new Audio('assets/sounds/beepalarm.mp3');
+    audio.play();
   }
 }

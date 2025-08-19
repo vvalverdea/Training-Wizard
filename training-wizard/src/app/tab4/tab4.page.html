@@ -38,11 +38,13 @@
       <ion-input type="number" [(ngModel)]="timerMinutes"></ion-input>
     </ion-item>
 
-    <ion-button expand="block" (click)="startTimer()">Iniciar Temporizador</ion-button>
-
-    @if (timerMinutes > 0) {
-    <h2>{{timeLeft}}'s</h2>
-    }
+    <ion-button expand="block" (click)="startTimer()" [color]="hasStarted ? 'danger' : 'primary'">
+      @if(hasStarted && timeLeft > 0) {
+      {{ timeLeft }}'s
+      } @else {
+      Iniciar Temporizador
+      }
+    </ion-button>
   </div>
 
 </ion-content>
