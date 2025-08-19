@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonGrid, IonRow, IonItem, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonLabel } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonGrid, IonRow, IonItem, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonLabel, IonInput } from '@ionic/angular/standalone';
 import { StorageService } from '../context/storage';
 import { EXERCISES_DATA } from '../constants/exercises';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-tab4',
   templateUrl: './tab4.page.html',
   styleUrls: ['./tab4.page.scss'],
-  imports: [IonHeader, IonCard, IonCardHeader, IonGrid, IonRow, IonItem, IonToolbar, IonTitle, IonCardTitle, IonContent, IonCardContent, IonButton, IonLabel],
+  imports: [IonHeader, IonCard, IonInput, IonCardHeader, IonGrid, IonRow, IonItem, IonToolbar, IonTitle, IonCardTitle, IonContent, IonCardContent, IonButton, IonLabel, FormsModule],
 })
 export class Tab4Page {
 
@@ -16,9 +17,13 @@ export class Tab4Page {
   exerciseImage: string = 'assets/exercises/curl-biceps.gif';
   exerciseDescription: string = 'Mantén los codos pegados al cuerpo y controla el movimiento tanto al subir como al bajar la barra.';
 
-  totalSeries: number = 4;
-  currentSeries: number = 0;
-  selectedWeight: number | null = null;
+  currentSeries = 0;
+  totalSeries = 4;
+  weight: number = 0;
+
+  timerMinutes: number = 0;
+  timeLeft: number = 0;
+  timer: any;
 
   constructor(private storage: StorageService) { }
 
@@ -30,15 +35,22 @@ export class Tab4Page {
   }
 
   increaseSeries() {
-    if (this.currentSeries < this.totalSeries) {
-      this.currentSeries++;
-    }
+    if (this.currentSeries < this.totalSeries) this.currentSeries++;
   }
 
   decreaseSeries() {
-    if (this.currentSeries > 0) {
-      this.currentSeries--;
-    }
+    if (this.currentSeries > 0) this.currentSeries--;
   }
 
+  startTimer() {
+    this.timeLeft = this.timerMinutes * 60;
+    clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      if (this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        clearInterval(this.timer);
+      }
+    }, 1000);
+  }
 }

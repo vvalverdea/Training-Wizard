@@ -21,17 +21,28 @@
     </ion-card-content>
   </ion-card>
 
-  <!-- Contador de series -->
   <div class="series-counter">
     <ion-button color="danger" (click)="decreaseSeries()">-</ion-button>
     <span>{{ currentSeries }}/{{ totalSeries }}</span>
     <ion-button color="success" (click)="increaseSeries()">+</ion-button>
   </div>
 
-  <!-- Peso elegido -->
   <ion-item>
     <ion-label position="floating">Peso usado (kg)</ion-label>
-
+    <ion-input type="number" [(ngModel)]="weight"></ion-input>
   </ion-item>
+
+  <div class="timer">
+    <ion-item>
+      <ion-label position="floating">Tiempo (minutos)</ion-label>
+      <ion-input type="number" [(ngModel)]="timerMinutes"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="startTimer()">Iniciar Temporizador</ion-button>
+
+    @if (timerMinutes > 0) {
+    <h2>{{timeLeft}}'s</h2>
+    }
+  </div>
 
 </ion-content>
